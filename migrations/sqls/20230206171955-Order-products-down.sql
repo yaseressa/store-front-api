@@ -1,0 +1,1 @@
+drop table Order_products;
