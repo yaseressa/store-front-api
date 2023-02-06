@@ -40,8 +40,7 @@ Navigate to the root directory and run the command below to migrate the database
   `npx db-migrate up`
 - drop tables
   `npx db-migrate down`
-
-!['migrate database'](./docs/migrate_up.png)
+  `for testing just add`
 
 ## .ENV file contents
 
