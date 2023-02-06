@@ -9,7 +9,7 @@
   "test": {
     "driver": "pg",
     "host": { "ENV": "DB_HOST" },
-    "database": "shopping_test",
+    "database": { "ENV": "DB_TEST_NAME" },
     "user": { "ENV": "DB_USER" },
     "password": { "ENV": "DB_PASS" }
   }

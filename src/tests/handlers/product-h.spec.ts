@@ -14,7 +14,6 @@ describe("Testing PRODUCTS endpoint", () => {
         category: "food",
       })
       .set("Authorization", "Bearer " + process.env.TOKEN_TEST);
-    console.log(response);
     expect(response.status).toBe(200);
   });
 

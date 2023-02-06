@@ -46,6 +46,7 @@ Navigate to the root directory and run the command below to migrate the database
 
 ```
 DB_NAME=shopping
+DB_TEST_NAME=shopping_test
 DB_PASS=password123
 DB_HOST=127.0.0.1
 DB_USER=shopping_user

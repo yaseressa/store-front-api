@@ -1,10 +1,9 @@
 import { Products, rProduct } from "../models/products-model";
 import verifyAuthToken from "./verify-auth";
-import { Response, Request, Router, Application } from "express";
+import { Response, Request, Application } from "express";
 const newProduct: Products = new Products();
 
 const getAllProducts = async (_req: Request, res: Response) => {
-  console.log("feuhufh");
   const products = await newProduct.index();
   res.json(products);
 };

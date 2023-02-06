@@ -7,7 +7,6 @@ export default (req: Request, res: Response, next: NextFunction) => {
     //@ts-ignore
     const authorizationHeader: string = req.headers.authorization;
     const token = authorizationHeader.split(" ")[1];
-    console.log(token);
     const decoded = jwt.verify(token, <string>process.env.TOKEN_SECRET);
     next();
   } catch (error) {
