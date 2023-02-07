@@ -43,6 +43,12 @@ describe("Testing Products model", () => {
     expect(result).toEqual([
       {
         id: 1,
+        name: "p",
+        price: "21",
+        category: "food",
+      },
+      {
+        id: 2,
         name: "pasta",
         price: "35",
         category: "food",

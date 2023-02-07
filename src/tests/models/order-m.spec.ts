@@ -7,6 +7,7 @@ describe("Testing Orders model", () => {
     expect(o.CurrentOrderByUserId).toBeDefined();
   });
   it("show method should return the correct order", async () => {
+    o.createOrder({ user_id: 1, status: "active" });
     const result: Order = await o.CurrentOrderByUserId(1);
     expect(result).toEqual({
       id: 1,
