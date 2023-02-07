@@ -38,10 +38,11 @@ an api for a store built as a udacity project.
 Navigate to the root directory and run the command below to migrate the database
 
 - create tables
-  `npx db-migrate up`
+  `npx db-migrate up` for dev (default)  
+  `npx db-migrate up -e test` for test
 - drop tables
-  `npx db-migrate down`
-  `for testing just add`
+  `npx db-migrate down` for dev (default)
+  `npx db-migrate down -e test` for test
 
 ## .ENV file contents
 
