@@ -20,6 +20,7 @@ an api for a store built as a udacity project.
 
 ### Database configurations
 
+- port: 5432
 - connect to the default postgres database as the server's root user `psql -U postgres`
 - first run below code to create a user:
   - `CREATE USER shopping_user WITH PASSWORD 'password123';`

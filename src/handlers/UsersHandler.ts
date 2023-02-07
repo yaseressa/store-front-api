@@ -3,19 +3,26 @@ import verifyAuthToken from "./verify-auth";
 import jwt from "jsonwebtoken";
 import { Response, Request, Router, Application } from "express";
 import dotenv from "dotenv";
-import bodyParser from "body-parser";
-
 dotenv.config();
+
 const newUser: Users = new Users();
 
 const getAllUsers = async (req: Request, res: Response) => {
-  const users = await newUser.index();
-  res.json(users);
+  try {
+    const users = await newUser.index();
+    res.json(users);
+  } catch (e) {
+    res.status(400).json(e);
+  }
 };
 
 const getUserById = async (req: Request, res: Response) => {
-  const user = await newUser.show(parseInt(req.params.id));
-  res.json(user);
+  try {
+    const user = await newUser.show(parseInt(req.params.id));
+    res.json(user);
+  } catch (e) {
+    res.status(400).json(e);
+  }
 };
 
 const createUser = async (req: Request, res: Response) => {
@@ -28,9 +35,9 @@ const createUser = async (req: Request, res: Response) => {
     const u: User = await newUser.create(userc);
     var j = jwt.sign({ user: u }, <string>process.env.TOKEN_SECRET);
     res.status(201).json({ Token: j });
-  } catch (err) {
+  } catch (e) {
     res.status(400);
-    res.json(err);
+    res.json(e);
   }
 };
 

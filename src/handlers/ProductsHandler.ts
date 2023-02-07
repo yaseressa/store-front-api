@@ -4,13 +4,21 @@ import { Response, Request, Application } from "express";
 const newProduct: Products = new Products();
 
 const getAllProducts = async (_req: Request, res: Response) => {
-  const products = await newProduct.index();
-  res.json(products);
+  try {
+    const products = await newProduct.index();
+    res.json(products);
+  } catch (e) {
+    res.status(400).json(e);
+  }
 };
 
 const getProductById = async (req: Request, res: Response) => {
-  const product = await newProduct.show(parseInt(req.params.id));
-  res.json(product);
+  try {
+    const product = await newProduct.show(parseInt(req.params.id));
+    res.json(product);
+  } catch (e) {
+    res.status(400).json(e);
+  }
 };
 
 const createProduct = async (req: Request, res: Response) => {
@@ -23,9 +31,9 @@ const createProduct = async (req: Request, res: Response) => {
 
     const p = await newProduct.create(productc);
     res.json(p);
-  } catch (err) {
+  } catch (e) {
     res.status(400);
-    res.json(err);
+    res.json(e);
   }
 };
 

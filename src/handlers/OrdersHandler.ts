@@ -4,9 +4,13 @@ import { Response, Request, Router, Application } from "express";
 const newOrder: Orders = new Orders();
 
 const currentOrder = async (req: Request, res: Response) => {
-  const user_id: number = parseInt(req.params.id);
-  const currentOrder: Order = await newOrder.CurrentOrderByUserId(user_id);
-  return res.json(currentOrder);
+  try {
+    const user_id: number = parseInt(req.params.id);
+    const currentOrder: Order = await newOrder.CurrentOrderByUserId(user_id);
+    return res.json(currentOrder);
+  } catch (e) {
+    res.status(400).json(e);
+  }
 };
 
 export default (app: Application) => {
