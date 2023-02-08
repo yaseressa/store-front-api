@@ -2,10 +2,6 @@
 
 an api for a store built as a udacity project.
 
-### Installation
-
-`yarn` or `npm i`
-
 #### Packages
 
 - express
@@ -18,9 +14,8 @@ an api for a store built as a udacity project.
 - jasmine
 - nodemon
 
-### Database configurations
+### 1. Database setup and connection
 
-- port: 5432
 - connect to the default postgres database as the server's root user `psql -U postgres`
 - first run below code to create a user:
   - `CREATE USER shopping_user WITH PASSWORD 'password123';`
@@ -33,7 +28,7 @@ an api for a store built as a udacity project.
   - `\c shopping_test`
   - `GRANT ALL PRIVILEGES ON DATABASE shopping_test TO shopping_user;`
 
-### Migrate Database
+#### Migrate Database
 
 Navigate to the root directory and run the command below to migrate the database
 
@@ -44,7 +39,7 @@ Navigate to the root directory and run the command below to migrate the database
   `npx db-migrate down` for dev (default)
   `npx db-migrate down -e test` for test
 
-## .ENV file contents
+#### contents of the .env file
 
 ```
 DB_NAME=shopping
@@ -58,16 +53,23 @@ TOKEN_SECRET=ys
 TOKEN_TEST=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4NSwiZmlyc3RuYW1lIjoiQW1tYXIiLCJsYXN0bmFtZSI6Iklzc2EiLCJwYXNzd29yZCI6IiQyYiQxMCROQTV6LzRlMFhIcTk3YkVFM2hha2dlWnlJZmU3dWpjZFMyY29XVHJnR0drU0hTdExLODRPaSJ9LCJpYXQiOjE2NzU2MTUxNDV9.hFOmSOFEyuPlSc7_ZwD5pQWLypvC0YOOYLXvL9MegLQ
 ```
 
-## Start App
+### 2. PORTS
+
+- backend PORT `3000`
+- datbase PORT
+
+### 3. Installation
+
+`npm i`
+
+### 4. Start App
 
 `npm run watch`
 
-## Endpoint Access
+#### Testing
 
-All endpoints are described in the REQUIREMENT.md file.
+- Run test with `npm test`
 
-## Testing
+#### Endpoint Access
 
-Run test with
-
-`npm test`
+- All endpoints are described in the REQUIREMENT.md file.
