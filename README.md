@@ -58,9 +58,9 @@ TOKEN_TEST=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4NSwiZmlyc3Ru
 - backend PORT `3000`
 - datbase PORT
 
-### 3. Installation
+### 3. Package Installation
 
-`npm i`
+-run `npm i` in the terminal.
 
 ### 4. Start App
 
