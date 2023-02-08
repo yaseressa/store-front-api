@@ -60,7 +60,7 @@ TOKEN_TEST=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4NSwiZmlyc3Ru
 
 ### 3. Package Installation
 
--run `npm i` in the terminal.
+- run `npm i` in the terminal.
 
 ### 4. Start App
 
